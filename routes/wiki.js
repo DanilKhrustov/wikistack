@@ -2,7 +2,6 @@ const model = require('../models');
 const views = require('../views');
 const viewsLayout = require('../views/layout');
 const express = require('express');
-//const { Page } = require("../models");
 
 const router = express.Router();
 
@@ -17,9 +16,7 @@ router.get('/add', async (req, res, next) => {
 router.post('/add', async (req, res, next) => {
   const page = new model.Page({
     title: req.body.title,
-    content: req.body.content,
-    status: 'open',
-
+    content: req.body.content
   });
 
   // make sure we only redirect *after* our save is complete!
